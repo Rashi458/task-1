@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper';
 import { useSelector } from 'react-redux';
 import { Navigation } from 'swiper/modules';
+import APP_URL from '../utils'
 import 'swiper/css/bundle';
 import {
   FaBath,
@@ -31,7 +32,7 @@ export default function Listing() {
     const fetchListing = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`/api/listing/get/${params.listingId}`);
+        const res = await fetch(APP_URL+`/api/listing/get/${params.listingId}`);
         const data = await res.json();
         if (data.success === false) {
           setError(true);

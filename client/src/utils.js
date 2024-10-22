@@ -1,0 +1,1 @@
+export default APP_URL = "https://task-1-irxy.onrender.com"
